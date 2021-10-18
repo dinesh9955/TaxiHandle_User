@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_sender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_70sdp"
+        android:background="@drawable/send_message_background"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:layout_gravity="end"
+        android:gravity="end"
+        android:visibility="gone"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_5sdp">
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_sender_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:text=""
+            android:textSize="@dimen/_12sdp"/>
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_sender_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:text=""
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:textSize="@dimen/_9sdp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_reciever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/get_message_background"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/_70sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_5sdp">
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_reciever_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:text=""
+            android:textSize="@dimen/_12sdp"/>
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_reciever_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:text=""
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:textSize="@dimen/_9sdp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

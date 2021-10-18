@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="@dimen/_100sdp"
+              android:layout_height="wrap_content"
+              android:background="@color/colorWhite"
+              android:elevation="@dimen/_10sdp"
+              android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tv_desAddress"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text=""
+        android:textColor="@color/colorBlack"
+        android:textSize="10sp"/>
+
+</LinearLayout>

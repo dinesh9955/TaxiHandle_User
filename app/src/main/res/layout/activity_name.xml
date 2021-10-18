@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:paddingTop="@dimen/_5sdp"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_knowYour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="@string/Let_us_know_your"
+       android:textColor="@color/colorWhite"
+       android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:textSize="@dimen/normal_text_size" />
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_knowYour"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/name"
+       android:textColor="@color/colorWhite"
+       android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:textSize="@dimen/bold_text_size"
+
+        app:fontName="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_nameFields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:weightSum="2"
+       android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp">
+
+        <cabuser.com.rydz.util.common.CustomFontEditText
+            android:id="@+id/etv_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorWhite"
+            android:paddingBottom="@dimen/_10sdp"            android:ellipsize="end"
+            android:hint="@string/first"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+           android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:textSize="@dimen/normal_text_size"
+            android:inputType="textPersonName"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:maxLength="16"
+            />
+
+        <cabuser.com.rydz.util.common.CustomFontEditText
+            android:id="@+id/etv_last"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+           android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorWhite"
+            android:paddingBottom="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:hint="@string/last"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+           android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:textSize="@dimen/normal_text_size"
+            android:inputType="textPersonName"
+            android:maxLength="16"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+    </LinearLayout>
+
+   <!-- <LinearLayout
+        android:id="@+id/ll_nameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_nameFields"
+        android:weightSum="2"
+        android:layout_marginTop="@dimen/_5sdp"
+       android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorBlack"
+            android:backgroundTint="@color/colorBlack" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+           android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_weight="1"
+            android:background="@color/colorBlack" />
+    </LinearLayout>-->
+
+    <ImageView
+        android:id="@+id/fab_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ll_nameFields"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:onClick="onClick"
+        android:src="@drawable/iv_nextarrow"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:visibility="visible"
+
+        app:fabSize="normal" />
+
+
+</RelativeLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.MainActivity">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewmodel"
+            type="cabuser.com.rydz.ui.profile.EditNumberViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_editHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/cross"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:onClick="onClick"/>
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            app:fontName="bold"
+            android:textSize="@dimen/smaller_text_size"/>
+
+        <ImageView
+            android:id="@+id/iv_done"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_tick"
+            android:tint="@color/colorWhite"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:onClick="@{()->viewmodel.updateUserInfo()}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cl_editHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/drawable_edit_text"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp">
+
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:ccp_clickable="true"
+            app:ccp_showNameCode="false"
+            app:ccp_textSize="@dimen/_14sdp"
+            android:gravity="center_vertical"
+            app:ccp_contentColor="@color/colorBlack"
+            app:ccp_showArrow="false"
+            app:ccp_defaultNameCode="USA"
+            app:ccp_countryPreference="US"
+            />
+
+
+
+        <cabuser.com.rydz.util.common.CustomFontEditText
+            android:id="@+id/edt_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:background="@null"
+            android:paddingVertical="@dimen/_10sdp"
+            android:singleLine="true"
+            android:inputType="phone"
+            android:textSize="@dimen/normal_text_size"
+            android:maxLength="10"
+            android:text="@={viewmodel.phoneNumber}"
+            app:ccp_defaultNameCode="TR"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <include
+        layout="@layout/header_with_back"/>
+
+    <com.stripe.android.view.CardInputWidget
+        android:id="@+id/cardInputWidget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_below="@id/cl_headermain"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:paddingHorizontal="@dimen/_5sdp"
+
+        android:background="@drawable/drawable_topblack_roundedcorners"/>
+
+    <TextView
+        android:id="@+id/tv_save"
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_12sdp"
+        android:text="Add"
+        android:onClick="onClick"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="wrap_content"
+       />
+
+
+
+</RelativeLayout>

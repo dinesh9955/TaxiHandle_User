@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewmodel"
+            type="cabuser.com.rydz.ui.profile.ChangeNumberOTPVerificationViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:paddingTop="@dimen/_5sdp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <include layout="@layout/header_back_onregister"/>
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_numbersubtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cl_headermain"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:text="@string/enter_otp"
+           android:textColor="@color/colorWhite"
+            android:textSize="@dimen/smaller_text_size" />
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_numberValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_numbersubtext"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:textColor="@color/colorWhite"
+            app:fontName="bold"
+            android:textSize="@dimen/smaller_text_size" />
+
+
+
+
+        <cabuser.com.rydz.util.common.OtpView
+            android:id="@+id/otp_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:backgroundTint="@null"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:inputType="number"
+           android:textColor="@color/colorWhite"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_below="@+id/otp_view"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_30sdp">
+
+            <cabuser.com.rydz.util.common.CustomFontTextView
+                android:id="@+id/tv_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="01: 00"
+               android:textColor="@color/colorWhite"
+                android:textSize="@dimen/smaller_text_size"/>
+
+            <cabuser.com.rydz.util.common.CustomFontTextView
+                android:id="@+id/tv_resendOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/resendcode"
+               android:textColor="@color/colorWhite"
+                android:visibility="gone"
+                android:onClick="onClick"
+                android:textSize="@dimen/smaller_text_size"/>
+
+
+            <ImageView
+                android:id="@+id/fab_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/iv_nextarrow"
+
+android:onClick="@{()->viewmodel.onOTPSuccessfulVerification()}"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

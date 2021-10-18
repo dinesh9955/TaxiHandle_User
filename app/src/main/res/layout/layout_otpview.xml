@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:weightSum="4"
+
+
+    >
+
+    <EditText
+        android:id="@+id/otp_one_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:gravity="center"
+        android:maxLength="1"
+        android:maxLines="1"
+        android:layout_weight="1"
+        android:imeOptions="actionNext"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/smaller_text_size"
+        />
+
+    <EditText
+        android:id="@+id/otp_two_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:gravity="center"
+        android:maxLength="1"
+        android:maxLines="1"
+        android:textColor="@color/colorBlack"
+        android:layout_weight="1"
+        android:imeOptions="actionNext"
+        android:textSize="@dimen/smaller_text_size"
+        />
+
+    <EditText
+        android:id="@+id/otp_three_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:gravity="center"
+        android:maxLength="1"
+        android:maxLines="1"
+        android:layout_weight="1"
+        android:textColor="@color/colorBlack"
+        android:imeOptions="actionNext"
+        android:textSize="@dimen/smaller_text_size"
+        />
+
+    <EditText
+        android:id="@+id/otp_four_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:gravity="center"
+        android:maxLength="1"
+        android:maxLines="1"
+        android:layout_weight="1"
+        android:imeOptions="actionDone"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/smaller_text_size"
+
+        />
+
+
+</LinearLayout>

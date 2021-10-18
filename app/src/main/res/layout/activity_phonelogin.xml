@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:paddingLeft="@dimen/_30sdp"
+    android:paddingTop="@dimen/_5sdp"
+    android:paddingRight="@dimen/_30sdp">
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_numbertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:gravity="center"
+        android:text="@string/enter_your"
+       android:textColor="@color/colorWhite"
+        android:textSize="@dimen/normal_text_size" />
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_subtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_numbertext"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/numberverifytext"
+       android:textColor="@color/colorWhite"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:fontName="medium" />
+
+    <LinearLayout
+        android:id="@+id/ll_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            app:ccp_clickable="true"
+            app:ccp_defaultNameCode="USA"
+            app:ccp_contentColor="@color/colorWhite"
+            app:ccp_showNameCode="false"
+            app:ccp_countryPreference="US"
+            app:ccp_textSize="@dimen/normal_text_size" />
+
+        <cabuser.com.rydz.util.common.CustomFontEditText
+            android:id="@+id/edt_phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:longClickable="false"
+            android:maxLength="10"
+            android:singleLine="true"
+           android:textColor="@color/colorWhite"
+            android:textSize="@dimen/normal_text_size" />
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view_phonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@id/ll_phone"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/colorWhite" />
+
+    <RelativeLayout
+        android:id="@+id/rl_loginwithemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_phonenumber"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_loginWithEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:text="@string/login_email"
+           android:textColor="@color/colorWhite"
+            android:textSize="@dimen/smaller_text_size"
+            app:fontName="bold" />
+
+        <ImageView
+            android:id="@+id/fab_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/colorBlack"
+            android:onClick="onClick"
+            android:visibility="visible"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/iv_nextarrow"
+            app:tint="@null" />
+    </RelativeLayout>
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_forgotpsswd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:onClick="onClick"
+        android:text="@string/forgot_pwd"
+       android:textColor="@color/colorWhite"
+        android:textSize="@dimen/smaller_text_size"
+        android:layout_below="@id/rl_loginwithemail"
+        android:visibility="gone" />
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_fb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="center"
+        android:onClick="onClick">
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_socialmediatext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/continue_text"
+           android:textColor="@color/colorWhite"
+            android:textSize="@dimen/smaller_text_size" />
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/btn_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:text="@string/social"
+            android:textAllCaps="false"
+           android:textColor="@color/colorWhite"
+            android:textSize="@dimen/smaller_text_size"
+            app:fontName="bold" />
+    </LinearLayout>
+
+
+</RelativeLayout>

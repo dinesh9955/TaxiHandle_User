@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:id="@+id/topLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+        <include layout="@layout/header_with_back"></include>
+
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_confirmtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cl_headermain"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/confirm_info"
+           android:textColor="@color/colorWhite"
+            android:textSize="@dimen/normal_text_size" />
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_nameFields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <cabuser.com.rydz.util.common.CustomFontEditText
+                    android:id="@+id/etv_first"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:hint="@string/first"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                   android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="@dimen/normal_text_size"
+                />
+
+                <cabuser.com.rydz.util.common.CustomFontEditText
+                    android:id="@+id/etv_last"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:hint="@string/last"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                   android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="@dimen/normal_text_size"
+                   />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_nameView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_nameFields"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:weightSum="2">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorBlack"
+                    android:backgroundTint="@color/colorWhite" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite" />
+            </LinearLayout>
+
+
+            <cabuser.com.rydz.util.common.CustomFontEditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="@string/email_example"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+               android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/normal_text_size"
+               />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/edt_email"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@color/colorWhite" />
+
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:ccp_clickable="true"
+                    app:ccp_showNameCode="false"
+                    app:ccp_textSize="@dimen/normal_text_size"
+                    android:gravity="center_vertical"
+                    app:ccp_contentColor="@color/colorWhite"
+                    app:ccp_defaultNameCode="USA"
+                    app:ccp_countryPreference="US"
+                    />
+
+                <cabuser.com.rydz.util.common.CustomFontEditText
+                    android:id="@+id/edt_phonenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="13"
+                    android:singleLine="true"
+                   android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/normal_text_size"
+                    app:ccp_defaultNameCode="TR"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@id/ll_phone"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@color/colorWhite" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fab_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/ll_main"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:src="@drawable/iv_nextarrow"
+            android:visibility="visible"
+
+            app:fabSize="normal"
+            android:onClick="onClick"
+           />
+
+
+    </RelativeLayout>
+<!--
+</layout>-->

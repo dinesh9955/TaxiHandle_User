@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:paddingTop="@dimen/_5sdp"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include layout="@layout/header_back_onregister"></include>
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_chooseYour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cl_headermain"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="@string/choose_an_account"
+       android:textColor="@color/colorWhite"
+        android:textSize="@dimen/normal_text_size"/>
+
+    <ImageView
+        android:id="@+id/iv_fbLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fb"
+        app:layout_constraintTop_toBottomOf="@id/tv_chooseYour"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_30sdp"/>
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_fbLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/iv_fbLogin"
+        app:layout_constraintBottom_toBottomOf="@id/iv_fbLogin"
+        app:layout_constraintLeft_toRightOf="@id/iv_fbLogin"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:onClick="onClick"
+        android:text="@string/facebook"
+        app:fontName="bold"
+       android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textSize="@dimen/normal_text_size"/>
+
+
+    <ImageView
+        android:id="@+id/iv_googleLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gmail"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/iv_fbLogin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_30sdp"/>
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_googleLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/iv_googleLogin"
+        app:layout_constraintBottom_toBottomOf="@id/iv_googleLogin"
+        app:layout_constraintLeft_toRightOf="@id/iv_googleLogin"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:onClick="onClick"
+        android:text="@string/google"
+        app:fontName="bold"
+        android:visibility="visible"
+
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textSize="@dimen/normal_text_size"/>
+
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_socialLoginMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/iv_googleLogin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        app:fontName="bold"
+        android:text="@string/social_login_message"
+       android:textColor="@color/colorWhite"
+        android:textSize="@dimen/smallest_text_size"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

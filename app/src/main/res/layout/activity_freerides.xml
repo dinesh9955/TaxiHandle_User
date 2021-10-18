@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/topLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <include layout="@layout/header_with_back" />
+
+    <RelativeLayout
+        android:id="@+id/rl_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@color/colorWhite"
+        android:elevation="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/icon_wallet" />
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_walletTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_toRightOf="@+id/iv_wallet"
+            android:gravity="center"
+            android:text="@string/wallet"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            app:fontName="bold" />
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/points"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_your_rewards_points"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:gravity="center"
+        android:text="@string/your_rewards_points"
+        android:textColor="@color/colorBlack"
+        android:textSize="25sp"
+        app:fontName="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_wallet" />
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_rewards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="0"
+        android:textColor="@color/colorBlack"
+        android:textSize="50sp"
+        app:fontName="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_rewards_points" />
+
+    <Button
+        android:id="@+id/btn_rewards_redeem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_40sdp"
+        android:background="@drawable/drawable_roundedblack"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/redeem"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/smaller_text_size"
+        android:onClick="onClick"
+        app:layout_constraintTop_toBottomOf="@id/tv_rewards" />
+</androidx.constraintlayout.widget.ConstraintLayout>

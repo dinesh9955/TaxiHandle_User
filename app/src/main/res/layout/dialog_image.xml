@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+  >
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close"
+        android:visibility="visible"
+        android:background="@drawable/drawable_circle"
+        app:fabSize="normal"
+        android:padding="@dimen/_10sdp"
+        android:layout_gravity="end"
+        android:onClick="onClick"/>
+
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/myZoomageView"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_250sdp"
+        app:zoomage_restrictBounds="false"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_autoCenter="true"
+        app:zoomage_zoomable="true"
+        app:zoomage_translatable="true"
+        app:zoomage_minScale="0.6"
+        app:zoomage_maxScale="8"
+        android:src="@color/colorWhite"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_centerInParent="true"
+        />
+</LinearLayout>

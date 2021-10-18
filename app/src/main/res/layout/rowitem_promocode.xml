@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_15sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:orientation="vertical">
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/_1a1824"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@id/tv_code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_discountType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/_878787"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/tv_validtill"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_validtill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:textColor="@color/_878787"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textIsSelectable="true"
+        android:textSize="14sp"
+        app:fontName="medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/colorView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_discountType"></View>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

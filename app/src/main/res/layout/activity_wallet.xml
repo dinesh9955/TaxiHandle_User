@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/cl_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="false">
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <include
+        layout="@layout/header_with_back"/>
+
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_walletAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_below="@id/cl_headermain"
+        />
+
+
+    <cabuser.com.rydz.util.common.CustomFontEditText
+        android:id="@+id/edt_amount"
+        android:layout_width="match_parent"
+        android:paddingVertical="@dimen/_15sdp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:hint="@string/amount"
+        android:textSize="12sp"
+        android:textColor="@color/_1a1824"
+        android:layout_below="@id/tv_walletAmount"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:inputType="number"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:elevation="0.4dp"
+
+        android:layout_height="wrap_content"/>
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_proceed"
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_12sdp"
+        android:text="@string/proceed_to_add_money"
+        android:onClick="onClick"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:layout_below="@+id/edt_amount"
+        android:layout_margin="@dimen/_30sdp"
+        android:layout_height="wrap_content"
+      />
+
+
+</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="cabuser.com.rydz.ui.login.EmailLoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingTop="@dimen/_5sdp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:onClick="onClick"
+            android:tint="@color/colorWhite"
+            android:src="@drawable/ic_navigate_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_loginwith"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:text="@string/continue_text"
+           android:textColor="@color/colorWhite"
+            android:textSize="@dimen/normal_text_size" />
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_loginwith"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:text="@string/login_with_email"
+           android:textColor="@color/colorWhite"
+            android:textSize="@dimen/bold_text_size"
+            app:fontName="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <cabuser.com.rydz.util.common.CustomFontEditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+android:backgroundTint="@color/colorWhite"
+                android:paddingBottom="@dimen/_10sdp"
+                android:ellipsize="end"
+                android:hint="@string/login_with_email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:maxLength="64"
+                android:text="@={viewmodel.email}"
+               android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/normal_text_size" />
+
+
+
+            <cabuser.com.rydz.util.common.CustomFontEditText
+                android:id="@+id/edt_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorWhite"
+                android:paddingBottom="@dimen/_10sdp"                android:ellipsize="end"
+                android:hint="@string/password_title"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:maxLength="20"
+                android:text="@={viewmodel.password}"
+               android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/normal_text_size" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center">
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorBlack"
+                    android:buttonTint="@color/colorWhite"
+                    android:foregroundTint="@color/colorBlack" />
+
+                <cabuser.com.rydz.util.common.CustomFontTextView
+                    android:id="@+id/tv_rememberMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:text="@string/remember_me"
+                   android:textColor="@color/colorWhite" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_container"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+
+            <cabuser.com.rydz.util.common.CustomFontTextView
+                android:id="@+id/tv_forgotpsswd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:onClick="onClick"
+                android:text="@string/forgot_pwd"
+               android:textColor="@color/colorWhite"
+                android:textSize="@dimen/smaller_text_size"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/fab_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:onClick="@{()->viewmodel.onNext()}"
+                android:src="@drawable/iv_nextarrow"
+                android:visibility="visible"
+                />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

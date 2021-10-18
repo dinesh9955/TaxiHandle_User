@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_180sdp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardPreventCornerOverlap="true">
+
+    <RelativeLayout
+        android:id="@+id/rl_vehicle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_marginTop="@dimen/_5sdp">
+
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_vehileType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:singleLine="true"
+            android:textAllCaps="true"
+            android:textColor="@color/colorView"
+            android:textSize="12sp"
+            app:fontName="bold" />
+
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_fare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_vehileType"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:singleLine="true"
+            android:textAllCaps="true"
+            android:textColor="@color/colorBlack"
+            android:textSize="30sp" />
+
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_promostatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_fare"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:singleLine="true"
+            android:text="@string/promo_applied"
+            android:textAllCaps="true"
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/_7sdp"
+            android:visibility="gone" />
+
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_seats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:drawableTop="@drawable/seat"
+            android:gravity="center"
+            app:fontName="medium"
+            android:paddingEnd="@dimen/_10sdp"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_vehicle"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp" />
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="@dimen/_2sdp"
+            android:background="@drawable/drawable_gradient" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

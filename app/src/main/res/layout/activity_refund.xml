@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.history.RefundActvity"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/header_with_back"></include>
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_reviewfare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:text="Review my fare "
+        android:textSize="18sp"
+        app:fontName="bold"
+        android:layout_margin="@dimen/_10sdp">
+
+    </cabuser.com.rydz.util.common.CustomFontTextView>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvReasons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+
+    <cabuser.com.rydz.util.common.CustomFontEditText
+        android:id="@+id/edt_enterIssueDiscription"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/edt_enterIssueTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/drawable_edit_text"
+        android:hint="@string/describe_your_issue"
+        android:imeOptions="actionDone"
+        android:padding="@dimen/_10sdp"
+        android:gravity="start"/>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edt_enterIssueDiscription"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textSize="@dimen/smaller_text_size"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/drawable_roundedblack"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:onClick="onClick"/>
+
+
+</LinearLayout>

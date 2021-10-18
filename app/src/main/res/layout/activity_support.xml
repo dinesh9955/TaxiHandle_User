@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/topLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+   >
+
+    <include layout="@layout/header_with_back"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_40sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <cabuser.com.rydz.util.common.CustomFontEditText
+                android:id="@+id/edt_enterIssueTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/drawable_edit_text"
+                android:hint="@string/enter_your_issue"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"/>
+
+            <cabuser.com.rydz.util.common.CustomFontEditText
+                android:id="@+id/edt_enterIssueDiscription"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/edt_enterIssueTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/drawable_edit_text"
+                android:hint="@string/describe_your_issue"
+                android:imeOptions="actionDone"
+                android:padding="@dimen/_10sdp"
+                android:gravity="start"/>
+
+            <Button
+                android:id="@+id/btn_submitFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/edt_enterIssueDiscription"
+                android:text="@string/submit_feedback"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textSize="@dimen/smaller_text_size"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/drawable_roundedblack"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:onClick="onClick"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

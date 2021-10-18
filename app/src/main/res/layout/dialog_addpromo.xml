@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    android:minWidth="@dimen/_280sdp">
+
+    <ImageView
+        android:id="@+id/fab_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close"
+        android:layout_margin="@dimen/_10sdp"
+        android:visibility="visible"
+        android:background="@drawable/drawable_circle"
+        app:fabSize="normal"
+        android:padding="@dimen/_10sdp"
+        android:onClick="onClick"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/drawable_whitecorner"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_4sdp">
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/promotext"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/normal_text_size"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"/>
+
+        <cabuser.com.rydz.util.common.CustomFontEditText
+            android:id="@+id/edt_promocode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_promocode"
+            android:background="@color/colorWhite"
+            android:textSize="@dimen/smaller_text_size"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+
+
+
+        <View
+            android:id="@+id/view_payment"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/colorDisableText"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+           />
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_promoerror"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/smallest_text_size"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:gravity="right"/>
+
+    </LinearLayout>
+
+
+    <cabuser.com.rydz.util.common.CustomFontTextView
+        android:id="@+id/tv_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_whitecorner"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:text="@string/add"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/smaller_text_size"
+        android:layout_margin="@dimen/_10sdp"
+        app:fontName="bold" />
+
+
+</LinearLayout>

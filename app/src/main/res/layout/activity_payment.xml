@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/topLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/header_with_back"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_headermain">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground">
+
+            <RelativeLayout
+                android:id="@+id/rl_wallet"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@color/colorWhite"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_wallet"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/icon_wallet" />
+
+                <cabuser.com.rydz.util.common.CustomFontTextView
+                    android:id="@+id/tv_walletTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_toRightOf="@id/iv_wallet"
+                    android:gravity="center"
+                    android:text="@string/wallet"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:fontName="bold" />
+
+
+                <cabuser.com.rydz.util.common.CustomFontTextView
+                    android:id="@+id/tv_walletValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_walletTitle"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_toRightOf="@+id/iv_wallet"
+                    android:gravity="center"
+                    android:text="@string/points"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    app:fontName="bold" />
+                <cabuser.com.rydz.util.common.CustomFontTextView
+                    android:id="@+id/tv_addmoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_toRightOf="@id/tv_walletValue"
+                    android:layout_below="@id/tv_walletTitle"
+                    android:gravity="center"
+                    android:text="Add Money"
+                    android:onClick="onClick"
+                    android:layout_centerVertical="true"
+android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="12sp"
+                    app:fontName="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_wallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:buttonTint="@color/colorBlue" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_cash"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@color/colorWhite"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rl_wallet">
+
+                <ImageView
+                    android:id="@+id/iv_cash"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/ic_cash" />
+
+                <cabuser.com.rydz.util.common.CustomFontTextView
+                    android:id="@+id/tv_cash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_toRightOf="@+id/iv_cash"
+                    android:gravity="center"
+                    android:text="@string/cash"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp" />
+
+
+                <RadioButton
+                     android:id="@+id/rb_cash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:buttonTint="@color/colorBlue"
+                    />
+            </RelativeLayout>
+
+
+            <cabuser.com.rydz.util.common.CustomFontTextView
+                android:id="@+id/tv_paymentMethods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/payment_method"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/smaller_text_size"
+                app:fontName="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rl_cash"
+                app:layout_constraintBottom_toTopOf="@id/cl_cardDetails"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_cardDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_paymentMethods">
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_cards"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="@dimen/_160sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_cards"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:scrollbarThumbVertical="@color/test"
+                        android:scrollbars="vertical"
+                        android:scrollbarSize="@dimen/_5sdp"
+                        android:visibility="visible"
+
+                        />
+                </RelativeLayout>
+                <ImageView
+                    android:id="@+id/iv_plusImage"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/add"
+                    app:layout_constraintTop_toBottomOf="@id/rl_cards"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                     />
+
+                <cabuser.com.rydz.util.common.CustomFontTextView
+                    android:id="@+id/tv_addpayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:gravity="center_vertical"
+                    android:text="@string/add_payment_method"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="@dimen/smaller_text_size"
+                    android:onClick="onClick"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintTop_toBottomOf="@id/rl_cards"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_plusImage"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <cabuser.com.rydz.util.common.CustomFontTextView
+                android:id="@+id/tv_promotion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/promotions"
+                android:visibility="gone"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/smaller_text_size"
+                app:fontName="bold"
+                app:layout_constraintTop_toBottomOf="@id/cl_cardDetails" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_promotion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:paddingLeft="@dimen/_10sdp"
+
+                android:paddingVertical="@dimen/_10sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_promotion">
+
+                <cabuser.com.rydz.util.common.CustomFontEditText
+                    android:id="@+id/edt_promocode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_promocode"
+                    android:background="@color/tab_background_unselected"
+                    android:maxLength="10"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:textSize="@dimen/smaller_text_size"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tv_add"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_add"
+                   />
+
+
+
+                <ImageView
+                    android:id="@+id/iv_clear"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/cross"
+                    android:background="@drawable/drawable_circle"
+                    android:backgroundTint="@color/colorView"
+                   app:layout_constraintEnd_toEndOf="@id/edt_promocode"
+                    app:layout_constraintTop_toTopOf="@id/edt_promocode"
+                    app:layout_constraintBottom_toBottomOf="@id/edt_promocode"
+
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:visibility="gone"
+                    android:onClick="onClick"
+                    android:padding="@dimen/_5sdp"
+                    />
+
+
+
+                <cabuser.com.rydz.util.common.CustomFontTextView
+                    android:id="@+id/tv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawable_whitecorner"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Apply"
+                    android:onClick="onClick"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="@dimen/smaller_text_size"
+                    android:layout_margin="@dimen/_10sdp"
+app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_add"
+                    app:fontName="bold" />
+
+
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <cabuser.com.rydz.util.common.CustomFontTextView
+                    android:id="@+id/tv_promotioncodes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    android:text="All Promocodes"
+                    android:visibility="visible"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/smaller_text_size"
+                    app:fontName="bold"
+                    app:layout_constraintTop_toBottomOf="@id/cl_promotion"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_promocodes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:scrollbarThumbVertical="@color/test"
+                    android:scrollbars="vertical"
+                    android:scrollbarSize="@dimen/_5sdp"
+                    android:visibility="visible"
+                   app:layout_constraintTop_toBottomOf="@id/tv_promotioncodes"
+                    />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

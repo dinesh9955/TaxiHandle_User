@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/cb_card"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:onClick="onClick"
+        android:visibility="gone"
+        android:src="@drawable/unchecked"
+        android:layout_marginStart="@dimen/_4sdp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_mark_default"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cb_card"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/_1a1824"
+        android:text="@string/mark_as_default"
+
+        />
+
+    <ImageView
+        android:id="@+id/iv_select"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:onClick="onClick"
+        android:visibility="gone"
+        android:src="@drawable/unchecked"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+    <TextView
+        android:id="@+id/tv_firstcardnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:text="•••• •••• •••• 4432"
+        android:textColor="@color/_1a1824"
+        android:textSize="14sp"
+
+        app:layout_constraintStart_toEndOf="@+id/iv_select"
+        app:layout_constraintTop_toBottomOf="@+id/cb_card" />
+
+    <TextView
+        android:id="@+id/tv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="@string/delete"
+        android:textColor="@color/colorRed"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_firstmastercarddetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_firstcardnumber" />
+
+
+    <!--SFProText-Regular-->
+    <TextView
+        android:id="@+id/tv_firstmastercarddetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Mastercard - 06/23"
+        android:textColor="@color/_878787"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_firstcardnumber"
+        app:layout_constraintTop_toBottomOf="@id/tv_firstcardnumber" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/colorView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_firstmastercarddetail"></View>
+</androidx.constraintlayout.widget.ConstraintLayout>

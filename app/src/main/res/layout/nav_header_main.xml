@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.MainActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="cabuser.com.rydz.ui.home.MainViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_menuheader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_header_height"
+        android:background="@drawable/drawable_gradient"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:onClick="onClick">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_userprofile"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            app:imageUrl="@{viewModel.userProfilePicUrl}"
+            app:civ_border_color="@color/colorView"
+            app:civ_border_width="@dimen/_1sdp"/>
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/iv_userprofile"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{viewModel.userName}"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/normal_text_size" />
+
+        <cabuser.com.rydz.util.common.CustomFontTextView
+            android:id="@+id/tv_userrating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_username"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/iv_userprofile"
+            android:drawablePadding="@dimen/_10sdp"
+            android:drawableRight="@drawable/fill_star"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:drawableTint="@color/colorWhite"
+            android:text="@{viewModel.userRating}"
+            android:textSize="@dimen/smaller_text_size"
+            android:textColor="@color/colorBlack"/>
+
+
+    </RelativeLayout>
+</layout>
