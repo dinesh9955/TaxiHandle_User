@@ -41,6 +41,7 @@ open class RydzApplication : Application() {
 
         //for sinch
         val SINCH_APP_KEY = "95c3e8ef-1a32-43fa-8030-743ab6c9f333"
+//        val SINCH_APP_KEY = "98820ee9-bde3-4143-ae93-275c6276876b"
         var user_obj: User? = null
         var tempuser_obj: User? = null
 

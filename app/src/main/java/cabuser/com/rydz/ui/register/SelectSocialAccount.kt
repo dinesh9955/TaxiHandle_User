@@ -97,9 +97,7 @@ class SelectSocialAccount : AppCompatActivity() , View.OnClickListener{
     }
 
     private fun googleSignIn() {
-
         val signInIntent : Intent  = mGoogleSignInClient!!.signInIntent
-
         startActivityForResult(signInIntent,RC_SIGN_IN)
     }
 
@@ -227,7 +225,6 @@ class SelectSocialAccount : AppCompatActivity() , View.OnClickListener{
             }
 
             override fun onError(e: FacebookException) {
-
                 Toast.makeText(this@SelectSocialAccount, e.message.toString(), Toast.LENGTH_SHORT).show()
                 Log.e("5656",e.message.toString())
                 AccessToken.setCurrentAccessToken(null)

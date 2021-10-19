@@ -1,5 +1,6 @@
 package cabuser.com.rydz.ui.register
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -34,6 +35,7 @@ class ProfileSetupActivity : BaseActivity(), View.OnClickListener {
     var binding: ActivityProfileSetupBinding? = null
     var viewmodel: RegisterViewModel? = null
 
+    @SuppressLint("NewApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initObservables()
@@ -57,8 +59,6 @@ class ProfileSetupActivity : BaseActivity(), View.OnClickListener {
                     RydzApplication.tempuser_obj!!.isSubscribed =1
                     else
                         RydzApplication.tempuser_obj!!.isSubscribed =0
-
-
                     viewmodel?.registerUser()
                 }
 

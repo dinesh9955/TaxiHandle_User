@@ -145,8 +145,6 @@ class OtpVerificationActivity : BaseActivity(), View.OnClickListener {
 
             Log.e("userLogin", "" + obj.success)
 
-
-
             if (obj.success!!) {
 
                 if (viewmodel?.str_NavigationFrom!!.toString().equals("facebookLogin", false)) {

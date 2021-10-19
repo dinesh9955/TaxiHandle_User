@@ -67,7 +67,6 @@ import cabuser.com.rydz.util.prefrences.PreferenceHelper.set
 import com.beust.klaxon.*
 import com.bumptech.glide.Glide
 import com.google.android.gms.common.ConnectionResult
-import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.LocationServices
@@ -83,8 +82,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.gms.tasks.Task
 import com.google.android.libraries.places.api.Places
-import com.google.android.libraries.places.api.model.Place
-import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest
 import com.google.android.libraries.places.api.net.PlacesClient
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -497,7 +494,7 @@ class MainActivity : BaseActivity(), OnMapReadyCallback, LocationResult, GoogleA
         }
 
 
-        tv_scheduleTime.setOnClickListener { v ->
+        tv_scheduleTime!!.setOnClickListener { v ->
 
             val tpd = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener(function = { view, h, m ->
 
@@ -541,6 +538,7 @@ class MainActivity : BaseActivity(), OnMapReadyCallback, LocationResult, GoogleA
 
                 if (selectedMinuteEnd > 51) {
                     if (selectedHourEnd == 11) {
+                        Log.e(TAG, "AAAAAAAA")
                         selectedHourEnd += 1
                         selectedMinuteEnd = selectedMinuteEnd + 10 - 60
                         amPmEnd = if (amPmEnd == "AM") {
@@ -550,16 +548,43 @@ class MainActivity : BaseActivity(), OnMapReadyCallback, LocationResult, GoogleA
                         }
                         tv_scheduleTime.text = strHour + " " + amPm + "-" + formatter.format(selectedHourEnd) + ":" + formatter.format(selectedMinuteEnd) + " " + amPmEnd
                     } else if (selectedHourEnd == 12) {
+                        Log.e(TAG, "BBBBBBBB")
                         selectedHourEnd = 1
                         selectedMinuteEnd = selectedMinuteEnd + 10 - 60
                         tv_scheduleTime.text = strHour + " " + amPm + "-" + formatter.format(selectedHourEnd) + ":" + formatter.format(selectedMinuteEnd) + " " + amPmEnd
                     } else {
+                        Log.e(TAG, "CCCCCCCCC")
                         selectedHourEnd += 1
                         selectedMinuteEnd = selectedMinuteEnd + 10 - 60
                         tv_scheduleTime.text = strHour + " " + amPm + "-" + formatter.format(selectedHourEnd) + ":" + formatter.format(selectedMinuteEnd) + " " + amPmEnd
                     }
                 } else {
-                    selectedMinuteEnd += 10
+                    Log.e(TAG, "DDDDDDDD")
+
+                    Log.e(TAG, "selectedHourEnd " + selectedHourEnd)
+                    Log.e(TAG, "selectedMinuteEnd " + selectedMinuteEnd)
+
+                    val myTime = ""+selectedHourEnd+":"+selectedMinuteEnd
+                    val df = SimpleDateFormat("HH:mm")
+                    val d = df.parse(myTime)
+                    val cal = Calendar.getInstance()
+                    cal.time = d
+                    cal.add(Calendar.MINUTE, 10)
+                    val newTime = df.format(cal.time)
+
+                    Log.e(TAG, "newTime "+newTime.toString())
+
+                    selectedHourEnd = newTime.toString().split(":")[0].toInt()
+                    selectedMinuteEnd = newTime.toString().split(":")[1].toInt()
+
+//                    if (selectedHourEnd == 12) {
+//                        // selectedHourEnd = selectedHourEnd + 1
+//                        selectedMinuteEnd = selectedMinuteEnd + 10
+//                    } else {
+//                        selectedHourEnd = selectedHourEnd + 1
+//                        selectedMinuteEnd = 0
+//                    }
+
                     tv_scheduleTime.text = strHour + " " + amPm + "-" + formatter.format(selectedHourEnd) + ":" + formatter.format(selectedMinuteEnd) + " " + amPmEnd
 
                     //   Log.e("525", scheduleDate + ": " + scheduleTimeSlot)
@@ -633,6 +658,10 @@ class MainActivity : BaseActivity(), OnMapReadyCallback, LocationResult, GoogleA
 
     //to set time in
     private fun setTimeInDialog(h: Int, m: Int, v: TextView) {
+
+        Log.e(TAG, "hAA " + h.toString())
+        Log.e(TAG, "mAA " + m.toString())
+
         val formatter = DecimalFormat("00")
 
         var selectedHour = h
@@ -689,11 +718,29 @@ class MainActivity : BaseActivity(), OnMapReadyCallback, LocationResult, GoogleA
                 v.text = strHour + "" + amPm + "-" + formatter.format(selectedHourEnd) + ":" + formatter.format(selectedMinuteEnd) + "" + amPmEnd
             }
         } else {
-            selectedMinuteEnd += 10
+           // selectedMinuteEnd += 10
+           // selectedHourEnd + 1
+
+            val myTime = ""+selectedHourEnd+":"+selectedMinuteEnd
+            val df = SimpleDateFormat("HH:mm")
+            val d = df.parse(myTime)
+            val cal = Calendar.getInstance()
+            cal.time = d
+            cal.add(Calendar.MINUTE, 10)
+            val newTime = df.format(cal.time)
+
+            Log.e(TAG, "newTime "+newTime.toString())
+
+            selectedHourEnd = newTime.toString().split(":")[0].toInt()
+            selectedMinuteEnd = newTime.toString().split(":")[1].toInt()
+
             v.text = strHour + "" + amPm + "-" + formatter.format(selectedHourEnd) + ":" + formatter.format(selectedMinuteEnd) + "" + amPmEnd
 
         }
         scheduleTimeSlot = strHour + " " + amPm
+
+//        scheduleTimeSlotAA 04:50 PM
+        Log.e(TAG, "scheduleTimeSlotAA " + scheduleTimeSlot.toString())
 
     }
 
@@ -3057,6 +3104,7 @@ class MainActivity : BaseActivity(), OnMapReadyCallback, LocationResult, GoogleA
      **/
 
     //clear all places and clean map
+    @SuppressLint("MissingPermission")
     fun clearViews() {
         Log.e("clearViews", "yes")
         isFocusOnSourse = true
@@ -3078,6 +3126,16 @@ class MainActivity : BaseActivity(), OnMapReadyCallback, LocationResult, GoogleA
         if (mMap != null) {
             Log.e("map", "not null")
             mMap!!.clear()
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return
+            }
             mMap!!.isMyLocationEnabled = true
         }
         tv_des.text = ""

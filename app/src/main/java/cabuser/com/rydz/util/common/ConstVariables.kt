@@ -24,8 +24,8 @@ interface ConstVariables {
         const val BOOKING_ID = "bookingId"
         const val ADMIN_ID = "adminId"
 
-     // const val STRIPEPUBLISHKEY="pk_test_00ZCZYW3EpLGlhmzmwH3VvUC"
-      const val STRIPEPUBLISHKEY="pk_live_XHiPxly2V9VEdn5fiF1qXsBz"
+      const val STRIPEPUBLISHKEY="pk_test_00ZCZYW3EpLGlhmzmwH3VvUC"
+//      const val STRIPEPUBLISHKEY="pk_live_XHiPxly2V9VEdn5fiF1qXsBz"
 
 
     }
