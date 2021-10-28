@@ -141,4 +141,5 @@ dependencies {
     apply plugin: 'com.google.gms.google-services'
     // Stripe Android SDK
     implementation 'com.stripe:stripe-android:14.4.1'
+
 }

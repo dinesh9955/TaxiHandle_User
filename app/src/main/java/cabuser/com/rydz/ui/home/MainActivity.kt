@@ -1915,8 +1915,7 @@ class MainActivity : BaseActivity(), OnMapReadyCallback, LocationResult, GoogleA
     }
 
     //common method to emit any socket event
-    fun sendObjectToSocket(jsonObject: JSONObject, type: String) =
-            AppSocketListener.getInstance().emit(type, jsonObject)
+    fun sendObjectToSocket(jsonObject: JSONObject, type: String) = AppSocketListener.getInstance().emit(type, jsonObject)
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == LOCATION_REQUEST) {
@@ -3480,11 +3479,13 @@ class MainActivity : BaseActivity(), OnMapReadyCallback, LocationResult, GoogleA
 
                     if (vehicleObj._id == RydzApplication.poolingType) //check if selected ride type is pooling
                     {
+                        Log.e(TAG, "Poool")
                         userRequestPoolBooking_Socket(cardId, srcPlace!!, destinationPlace!!, paymentMode, vehicleObj._id, subTotal, estimateFare(tripDistance!!.toString().replace(",", "").toDouble(), vehicleObj.fareRate.toString().replace(",", "").toDouble(), vehicleObj.baseFare.toString().replace(",", "").toDouble(), vehicleObj.fareChangekm.toString().replace(",", "").toDouble(), vehicleObj.fareRateAfter.toString().replace(",", "").toDouble()) + tax, tripTime!!, tv_cust_notes!!.text.toString().trim(), tv_cust_name.text.toString(), farecal, tripDistance!!)
 
-                    } else
+                    } else {
+                        Log.e(TAG, "Boook")
                         userRequestBooking_Socket(cardId, srcPlace!!, destinationPlace!!, paymentMode, vehicleObj._id, subTotal, estimateFare(tripDistance!!.toString().replace(",", "").toDouble(), vehicleObj.fareRate.toString().replace(",", "").toDouble(), vehicleObj.baseFare.toString().replace(",", "").toDouble(), vehicleObj.fareChangekm.toString().replace(",", "").toDouble(), vehicleObj.fareRateAfter.toString().replace(",", "").toDouble()) + tax, tripTime!!, tv_cust_notes!!.text.toString().trim(), tv_cust_name.text.toString(), farecal, tripDistance!!)
-
+                    }
                     findindRideProgressdialog = FindingRideBottomSheetFragment()
                     findindRideProgressdialog!!.isCancelable = false
                     findindRideProgressdialog!!.show(supportFragmentManager, "bdbd")
